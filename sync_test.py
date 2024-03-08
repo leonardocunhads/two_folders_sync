@@ -17,7 +17,8 @@ dir_sync = os.listdir(path_source)
 for file in dir_sync:
     print(file, type(file))
     try:
-        os.rename(path_replica + '\\' + file, path_source + '\\' + file)
+        print(len(dir_sync))
+        # shutil.copy(path_source + '\\' + file, path_replica + '\\' + file)
     except:
         print('File or Folder: not found!')
 
