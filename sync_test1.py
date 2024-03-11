@@ -1,54 +1,33 @@
 import os
-import logging
-from pathlib import Path
+import shutil
+
+# Return a string representing the current working directory.
+# os.getcwd()
+# r -> to ignore the back slash as a command
 
 path_source = r"C:\\Users\\leona\\Desktop\\test\\source\\"
+path_replica = r"C:\\Users\\leona\\Desktop\\test\\replica\\"
 
-def set_log(log_name):
+# path_folders = os.path.dirname(path_main)
 
-    logging.basicConfig(
-        level=logging.INFO,
-        filename=log_name+'.log',
-        filemode='a',
-        format='%(asctime)s - %(levelname)s: %(message)s')
+# replace
 
+dir_sync = os.listdir(path_source)
 
-    log_msg = 'Synchronized -> '
-
-    folders_sync = 3
-    files_sync = 3
-
-    logging.info(log_msg + 'Folders: {} | Files: {}'.format(folders_sync, files_sync))
-
-file_name = input('Type a name for a log file: ')
-
-if not os.path.exists(logs):
-    os.makedirs(logs)
-    os.chdir(logs)
-    set_log(file_name)
-else:
-    os.chdir(logs)
-    set_log(file_name)
- 
+for file in dir_sync:
+    print(file, type(file))
+    try:
+        print(len(dir_sync))
+        # shutil.copy(path_source + '\\' + file, path_replica + '\\' + file)
+    except:
+        print('File or Folder: not found!')
 
 
+'''
+print('-' * 15)
 
-# print(os.listdir(path_source))
-# print('\n'+'-' * 20 + '\n' )
+print(path_source, type(path_source))
 
-# print(os.walk(path_source, type(os.walk(path_source))))
+print('-' * 15)
 
-# print(list(os.walk(path_source)))
-# print('\n'+'-' * 20 + '\n' )
-
-'''for root, dirs, files in os.walk(path_source):
-    print(root)
-    print(dirs)
-    print(files)
-    print('-' * 15)'''
-
-#logs  = os.getcwd() + r'\\logs'
-logs = Path(path_source)
-
-logs.parent
-print(type(logs.parent))
+print(len(dir_sync))'''
