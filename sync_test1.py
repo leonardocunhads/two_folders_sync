@@ -16,3 +16,6 @@ for root, dirs, files in os.walk(path_source):
     print(dirs)
     print(files)
     print('-' * 15)
+
+logs  = os.getcwd() + r'\\logs'
+print(logs)

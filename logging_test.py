@@ -18,7 +18,11 @@ def set_log(log_name):
 
     logging.info(log_msg + 'Folders: {} | Files: {}'.format(folders_sync, files_sync))
 
-logs = r"C:\\Users\\leona\\Documents\\GitHub\\two_folders_sync\\logs"
+
+
+#logs = r"C:\\Users\\leona\\Documents\\GitHub\\two_folders_sync\\logs"
+logs  = os.getcwd() + r'\\logs'
+
 file_name = input('Type a name for a log file: ')
 
 if not os.path.exists(logs):
