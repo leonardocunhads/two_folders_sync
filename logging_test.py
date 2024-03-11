@@ -1,5 +1,5 @@
-import logging
 import os
+import logging
 
 
 def set_log(log_name):
